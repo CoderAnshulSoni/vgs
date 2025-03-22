@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="~{fragments/header :: header}"></div>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Your Career Recommendations</h1>
+    <div th:if="${recommendations.empty}">
+        <p class="text-center">No recommendations available.</p>
+    </div>
+    <div th:unless="${recommendations.empty}">
+        <ul class="list-group">
+            <li class="list-group-item" th:each="recommendation : ${recommendations}">
+                <span th:text="${recommendation.recommendedCareer}">Career</span>
+                <span class="badge badge-primary" th:text="'Confidence: ' + ${recommendation.confidenceScore}">Confidence</span>
+            </li>
+        </ul>
+    </div>
+    <a href="/" class="btn btn-primary btn-block mt-4">Back to Home</a>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
