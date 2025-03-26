@@ -1,0 +1,70 @@
+Vocational Guidance System (VGS) - AI-Powered Career Recommendation
+
+📌 Overview
+The Vocational Guidance System (VGS) is a Spring Boot application that provides AI-powered career recommendations based on user interests and aptitude tests. The system uses machine learning and NLP techniques to offer personalized career guidance.
+
+✨ Features
+AI-Powered Recommendations: Uses ML models to suggest careers
+-> Dynamic Aptitude Tests: Generates questions based on user interests
+-> User Profiles: Stores user data and test results
+-> RESTful API: For frontend-backend communication
+-> Thymeleaf Frontend: Simple web interface
+
+🛠️ Technologies Used
+* Backend 
+    -> Java 21
+    -> Spring Boot 3.1
+    -> Spring AI
+    -> DJL (Deep Java Library)
+    -> Spring Data JPA
+    -> MySQL
+
+* Frontend
+    -> Thymeleaf
+    -> Bootstrap 5
+    -> HTML5/CSS3
+
+* AI/ML
+    -> Hugging Face Transformers
+    -> Custom-trained models
+
+🏗️ Project Structure
+
+vgs/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── vgs/
+│   │   │               ├── config/       # Configuration classes
+│   │   │               ├── controller/   # MVC Controllers
+│   │   │               ├── model/        # Data models
+│   │   │               ├── repository/   # JPA Repositories
+│   │   │               ├── service/      # Business logic
+│   │   │               └── VgsApplication.java
+│   │   └── resources/
+│   │       ├── static/   # CSS, JS
+│   │       ├── templates/ # Thymeleaf
+│   │       └── application.properties
+│   └── test/            # Test cases
+├── .gitignore
+├── pom.xml
+└── README.md
+
+🤖 AI Model Integration
+The system uses two main AI components:
+  1.  Question Generation Model:
+      Generates aptitude questions based on user interests
+      Implemented using Hugging Face Transformers
+
+  2.  Career Recommendation Model:  
+      Predicts suitable careers based on test results
+      Custom-trained linear regression model
+
+🌐 API Endpoints
+Endpoint	Method	Description
+  => /api/users	                  POST	              - Create new user
+  => /api/aptitude-test	          GET	                - Get aptitude questions
+  => /api/career-recommendations	POST	              - Get career recommendations
+  => /api/predictions	            POST	              - Get ML-based predictions
